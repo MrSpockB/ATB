@@ -1,0 +1,92 @@
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+@keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+
+html, body { margin: 0; height: 100%; overflow: hidden;}
+body{ display: flex; align-items:center; justify-content:center; }
+#app{ width: 100%; height: 100%;position: relative; h1,h2,h3{margin-top: 0;}}
+h3 { text-align: center;}
+.wrapAnim{width: 100%;height: 100%; }
+.form
+{
+  .row{ margin-bottom: 0; }
+  i{ margin-top: 20px; }
+  input[type=email]+label:after{top: 57px;}
+}
+.locu-select .input-field { margin-top: 0.5rem; }
+.locu-label { padding: 0 0.75rem; }
+.AnimCompWrap{ width: 100%; height: 100%;display: flex;align-items: center;justify-content: center;}
+
+.main-leave, .main-enter{
+	animation-duration: 1s;
+	position: absolute;
+  display: none;
+
+}
+
+.main-leave-active {
+  animation-name: slideOutLeft;
+  display: flex;
+}
+
+.main-enter-active {
+  animation-name: slideInRight;
+  display: flex;
+}
+
+#overlay{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.7);
+  transition: 1s;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &.active{ opacity: 1; z-index: 999;}
+  #title{ color: #FFF;font-size: 20px;margin-top: 10px; }
+}
+
+.loading 
+{
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  border: 0.25rem solid rgba(255, 255, 255, 0.2);
+  border-top-color: white;
+  -webkit-animation: spin 1s infinite linear;
+          animation: spin 1s infinite linear;
+}
