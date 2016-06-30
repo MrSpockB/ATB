@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@Cerveza_Minerva">
+	<meta name="twitter:title" content="AROUNDTHEBEER">
+	<meta name="twitter:description" content="Comparte tu video para poder participar en el viaje">
+	<meta name="twitter:image" content="http://landing.cervezaminerva.mx/img/placeholder.png">
+	<title>AROUNDTHEBEER</title>
+	<link rel="stylesheet" href="http://localhost:3000/app/libs/css/materialize.min.css">
+	<style>
+		#overlay #title{ color: white; }
+		@font-face {
+		    font-family: 'airline';
+		    src: url('http://localhost:3000/app/libs/fonts/airline/airline-webfont.woff2') format('woff2'),
+		         url('http://localhost:3000/app/libs/fonts/airline/airline-webfont.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+
+		}
+		html{ font-family: "airline"; }
+	</style>
+</head>
+<body>
+	<script>
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '579835465527010',
+	      xfbml      : true,
+	      version    : 'v2.6'
+	    });
+	  };
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "//connect.facebook.net/en_US/sdk.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	</script>
+	<div id="overlay">
+		<div class="loading"></div>
+		<div id="title">Subiendo tu video...</div>
+	</div>
+	<div id="app"></div>
+	<script src="/static/bundle.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="http://localhost:3000/app/libs/js/materialize.js"></script>
+</body>
+</html>
